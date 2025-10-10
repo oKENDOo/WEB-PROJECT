@@ -10,6 +10,7 @@ body {
     background-color: #F8F9FA; /* Off-white background for the page */
     color: #333;
     line-height: 1.7;
+    
 }
 
 /* --- Utility Classes --- */
@@ -138,7 +139,6 @@ main {
     border-radius: 20px ;
 }
 
-
 .content-section p {
     margin-bottom: 1.5rem;
     color: #555; /* Slightly lighter text color for paragraphs */
@@ -146,7 +146,6 @@ main {
    
     
 }
-
 .social-icons {
     margin-top: 2rem;
     display: flex;
@@ -158,16 +157,6 @@ main {
     height: 32px;
     width: 32px;
 }
-
-footer {
-    background-color: #d1f0d1; /* สีเขียวเดียวกับ header */
-    width: 100%;
-    padding: 2rem 0;
-    margin-top: 3rem; /* เพิ่มระยะห่างจาก content ด้านบน */
-    border-radius: 60px 0 0 0; /* ทำให้มุมบนซ้ายโค้ง (ตรงข้ามกับ header) */
-}
-
-
 /* --- Responsive Design for Smaller Screens --- */
 @media (max-width: 992px) {
     .main-layout {
@@ -176,4 +165,113 @@ footer {
     nav {
         display: none; /* Hide navigation on small screens for simplicity */
     }
+}
+.card {
+            background: #d9d9d9;
+            border-radius: 20px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .image-section {
+            width: 100%;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-title {
+            text-align: center;
+            font-size: 32px;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .info-item {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #000;
+        }
+
+        .info-label {
+            font-weight: bold;
+        }
+
+        .description-text {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .booking-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .booking-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        @media (max-width: 968px) {
+            .card {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .page-title {
+                font-size: 28px;
+            }
+
+            .image-section img {
+                height: 300px;
+            }
+        }
+        footer {
+    background-color: #d1f0d1; /* สีเขียวเดียวกับ header */
+    width: 100%;
+    padding: 2rem 0;
+    margin-top: 9rem; /* เพิ่มระยะห่างจาก content ด้านบน */
+    border-radius: 60px 0 0 0; /* ทำให้มุมบนซ้ายโค้ง (ตรงข้ามกับ header) */
+}
+.back-link{
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
 }
