@@ -1,0 +1,260 @@
+/* --- Global Styles & Resets --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif; 
+    background-color: #F8F9FA; /* Off-white background for the page */
+    color: #333;
+    line-height: 1.7;
+}
+
+/* --- Utility Classes --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+/* --- Header Styles --- */
+header {
+    background-color: #d1f0d1; /* Light mint green background */
+   border-radius: 0  0 0 60px  ;
+    width: 100%;
+    padding: 1.5rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img{
+    height: 50px;
+    transition: transform 0.2s ease;
+}
+
+.logo img:hover{
+     transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none; /* Remove bullet points */
+    gap: 5rem; /* Space between menu items */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #1E8449; /* Darker green on hover */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between action items */
+}
+
+.header-actions .search-btn{
+    height: 30px;
+    width: 30px;
+}
+.header-actions  .bar{
+    height: 30px;
+    width: 8px;
+}
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.search-btn:hover{
+    transform: scale(1.15); /* ขยายไอคอนเมื่อเอาเมาส์ไปชี้ */
+}
+
+.login-btn, .signup-btn {
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-btn {
+    color: #333;
+}
+
+.login-btn:hover {
+    color: #1E8449;
+}
+
+.signup-btn {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.signup-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Main Content Styles --- */
+main {
+    padding: 3rem 0;
+}
+
+.main-layout {
+    display: flex;
+    gap: 2rem; /* Space between the two columns */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.image-gallery {
+    flex: 1; /* Takes up 1 part of the available space */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between the two images */
+}
+
+.image-container img {
+    width: 80%;
+    border-radius: 15px;
+    display: block; /* Removes extra space below image */
+}
+.right-column{
+ flex: 1.2; /* Takes up 1.2 parts, making it slightly wider */
+}
+.right-column h1{
+  color: #1E8449; /* Dark green for the heading */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+.content-section {
+    background-color: #F1F3F4; /* Light grey background for the content box */
+    padding: 2.5rem;
+    border-radius: 20px ;
+}
+
+
+.content-section p {
+    margin-bottom: 1.5rem;
+    color: #555; /* Slightly lighter text color for paragraphs */
+    font-size: 18px;
+   
+    
+}
+
+.social-icons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+     justify-content: flex-end;
+}
+
+.social-icons img {
+    height: 32px;
+    width: 32px;
+      transition: transform 0.2s ease;
+
+}
+
+.social-icons img:hover {
+    transform: scale(1.15); /* ขยายไอคอนเมื่อเอาเมาส์ไปชี้ */
+}
+
+footer {
+    background-color: #d1f0d1; /* สีเขียวเดียวกับ header */
+    width: 100%;
+    padding: 2rem 0;
+    margin-top: 3rem; /* เพิ่มระยะห่างจาก content ด้านบน */
+    border-radius: 60px 0 0 0; /* ทำให้มุมบนซ้ายโค้ง (ตรงข้ามกับ header) */
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* ระยะห่างระหว่างการ์ด */
+    flex-wrap: wrap; /* ทำให้การ์ดขึ้นบรรทัดใหม่เมื่อหน้าจอแคบลง */
+}
+
+.team-member-card {
+    text-align: center;
+    flex-basis: 260px; /* กำหนดความกว้างพื้นฐานของการ์ดแต่ละใบ */
+}
+
+.member-photo {
+    height: 320px;
+    background-color: #EAEAEA; /* สีเทาสำหรับช่องรูปภาพ */
+    border-radius: 0 0px 40px 0px; /* ทำให้มุมบนขวาและล่างซ้ายโค้ง */
+    margin-bottom: 1.5rem; /* ระยะห่างระหว่างรูปกับชื่อ */
+    overflow: hidden;
+}
+
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้รูปเต็มกรอบและคงสัดส่วนเดิม */
+}
+
+.member-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease;
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.15); /* ขยายไอคอนเมื่อเอาเมาส์ไปชี้ */
+}
+
+
+
+/* --- Responsive for Contact Page on smaller screens --- */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    .team-grid {
+        gap: 1.5rem;
+    }
+}
+
+
+/* --- Responsive Design for Smaller Screens --- */
+@media (max-width: 992px) {
+    .main-layout {
+        flex-direction: column; /* Stack columns on top of each other */
+    }
+    nav {
+        display: none; /* Hide navigation on small screens for simplicity */
+    }
+}
