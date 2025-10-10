@@ -10,6 +10,9 @@ body {
     background-color: #F8F9FA; /* Off-white background for the page */
     color: #333;
     line-height: 1.7;
+     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* --- Utility Classes --- */
@@ -115,6 +118,7 @@ nav a:hover {
 /* --- Main Content Styles --- */
 main {
     padding: 3rem 0;
+        flex-grow: 1;
 }
 
 .main-layout {
@@ -238,6 +242,99 @@ footer {
 
 
 
+/* --- Detail Page Styles --- */
+
+/* ส่วนหัวของหน้า (ที่มีชื่อสนามกับปุ่ม Back) */
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.detail-header .back-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* การ์ดข้อมูลหลัก */
+.card {
+    display: flex;
+    background-color: #d2d3d3; /* สีเทาอ่อน */
+    padding: 2.5rem;
+    border-radius: 20px;
+    gap: 2.5rem; /* ระยะห่างระหว่างรูปกับข้อมูล */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ส่วนของรูปภาพด้านซ้าย */
+.image-section {
+    flex: 1 1 45%; /* ให้รูปภาพกินพื้นที่ประมาณ 45% */
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+/* ส่วนของข้อมูลด้านขวา */
+.info-section {
+    flex: 1 1 55%; /* ให้ข้อมูลกินพื้นที่ประมาณ 55% */
+    display: flex;
+    flex-direction: column; /* เรียงข้อมูลจากบนลงล่าง */
+}
+
+.info-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.info-label {
+    font-weight: bold;
+    margin-right: 0.5em; /* เพิ่มระยะห่างระหว่าง Label กับข้อมูล */
+}
+
+.description-text {
+    display: block; /* ทำให้คำอธิบายขึ้นบรรทัดใหม่ */
+    margin-top: 0.25rem;
+}
+
+/* ปุ่ม Booking */
+.booking-btn {
+    background-color: #00C853; /* สีเขียวสด */
+    color: white;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px; /* ทำให้ขอบมนสุด */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: auto; /* ดันปุ่มให้ไปอยู่ล่างสุดของกล่องข้อมูล */
+    align-self: flex-start; /* ทำให้ปุ่มไม่ขยายเต็มความกว้าง */
+}
+
+.booking-btn:hover {
+    background-color: #009624; /* สีเขียวเข้มขึ้นเมื่อ hover */
+}
+
 /* --- Responsive for Contact Page on smaller screens --- */
 @media (max-width: 768px) {
     .page-title {
@@ -258,3 +355,6 @@ footer {
         display: none; /* Hide navigation on small screens for simplicity */
     }
 }
+
+/* --- Fix Detail Header Order --- */
+
