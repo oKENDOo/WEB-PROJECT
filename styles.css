@@ -423,13 +423,8 @@ body {
     background: #b8b8b8;
 }
 
-.gender-btn.active {
-    background: #ec407a; /* สีชมพูสำหรับผู้หญิง */
-    color: white;
-}
-
 .gender-btn.active svg {
-    stroke: white;
+    stroke: #666;
 }
 
 .gender-btn svg {
