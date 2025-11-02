@@ -244,12 +244,14 @@ footer {
 
 /* --- Detail Page Styles --- */
 
+.detail-header {
+    margin-top: -2rem; /* ลดระยะห่างจาก 2rem เป็น 0 */
+}
 /* ส่วนหัวของหน้า (ที่มีชื่อสนามกับปุ่ม Back) */
 .detail-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
     margin-bottom: 1.5rem;
 }
 
@@ -262,6 +264,15 @@ footer {
     text-decoration: none;
     color: #555;
     font-size: 1rem;
+}
+
+.back-link
+{
+transition: all 0.2s ease-in-out;
+}
+
+.back-link:hover{
+    transform: translateY(-3px);
 }
 
 /* การ์ดข้อมูลหลัก */
@@ -335,6 +346,26 @@ footer {
     background-color: #009624; /* สีเขียวเข้มขึ้นเมื่อ hover */
 }
 
+.booking-btn-detail{
+    background-color: #00C853; /* สีเขียวสด */
+    color: white;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px; /* ทำให้ขอบมนสุด */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: auto; /* ดันปุ่มให้ไปอยู่ล่างสุดของกล่องข้อมูล */
+    align-self: flex-start; /* ทำให้ปุ่มไม่ขยายเต็มความกว้าง */
+    width: 600px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.booking-btn-detail:hover {
+    background-color: #009624; /* สีเขียวเข้มขึ้นเมื่อ hover */
+}
 /* --- Responsive for Contact Page on smaller screens --- */
 @media (max-width: 768px) {
     .page-title {
@@ -356,5 +387,4 @@ footer {
     }
 }
 
-/* --- Fix Detail Header Order --- */
 
