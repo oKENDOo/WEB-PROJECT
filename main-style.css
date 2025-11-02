@@ -375,16 +375,3 @@ transition: all 0.2s ease-in-out;
         gap: 1.5rem;
     }
 }
-
-
-/* --- Responsive Design for Smaller Screens --- */
-@media (max-width: 992px) {
-    .main-layout {
-        flex-direction: column; /* Stack columns on top of each other */
-    }
-    nav {
-        display: none; /* Hide navigation on small screens for simplicity */
-    }
-}
-
-
