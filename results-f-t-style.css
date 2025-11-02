@@ -1,0 +1,100 @@
+/* --- Search Result Page Styles --- */
+
+.tournament .card-image img {
+    height: 400px; /* ปรับความสูงของรูปภาพเฉพาะหน้า Tournament */
+}
+
+/* ตัวครอบการ์ดทั้งหมด ใช้สำหรับจัด layout แบบ grid */
+.results-grid {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่กลางเมื่อมีพื้นที่เหลือ */
+    gap: 2rem; /* ระยะห่างระหว่างการ์ด */
+    flex-wrap: wrap; /* ทำให้การ์ดขึ้นบรรทัดใหม่เมื่อหน้าจอแคบลง */
+}
+
+/* สไตล์ของการ์ดแต่ละใบ */
+.result-card {
+    background-color: #E9E9E9; /* สีเทาอ่อน */
+    border-radius: 0px 0px 40px 0px; /* >> แก้ไขข้อ 2: ทำให้มุมโค้งมนทุกด้าน << */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-basis: 350px;
+    transition: transform 0.2s ease;
+    padding-top: 1rem; /* >> แก้ไขข้อ 2: เพิ่มช่องว่างด้านบนการ์ดสำหรับรูปภาพ << */
+    height: 600 px;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+}
+
+/* >> แก้ไขข้อ 2: เพิ่มกรอบสีฟ้าและช่องว่างรอบรูป << */
+/* ส่วนรูปภาพของการ์ด (ตัวครอบ) */
+.card-image {
+    padding: 0.5rem; /* สร้างระยะห่างระหว่างกรอบสีฟ้ากับรูปภาพ */
+    border-radius: 15px; /* ทำให้กรอบโค้งมน */
+    margin: 0 1rem; /* จัดตำแหน่งกรอบให้อยู่กลางๆ */
+}
+
+/* รูปภาพจริง */
+.card-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px; /* ทำให้มุมของรูปภาพโค้งมน */
+}
+
+/* ส่วนเนื้อหาของการ์ด */
+.card-content-f h3{
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.card-content-f p {
+    display: flex;
+     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20px;
+
+}
+
+.card-content-t{
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.card-info {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+/* ส่วนปุ่มของการ์ด */
+.card-action {
+    padding: 2rem 2.5rem 1.5rem 1.5rem;
+    text-align: right;
+}
+
+.result-card .booking-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+     text-decoration: none;
+}
