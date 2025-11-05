@@ -74,6 +74,28 @@
 
         <!-- Main Content -->
         <main class="main-content">
+            <!-- Search Filters -->
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label>User</label>
+                    <input type="text" class="filter-input" placeholder="">
+                </div>
+                <div class="filter-group">
+                    <label>E-mail</label>
+                    <input type="text" class="filter-input" placeholder="">
+                </div>
+                <div class="filter-group">
+                    <label>Role</label>
+                    <input type="text" class="filter-input" placeholder="">
+                </div>
+                <button class="btn-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                </button>
+            </div>
+
             <div class="user-list">
                 <div class="table-header">
                     <div class="th">#</div>
@@ -211,5 +233,18 @@
             </div>
         </main>
     </div>
+
+    <script>
+        // Search functionality
+        document.querySelector('.btn-search').addEventListener('click', function() {
+            const filters = document.querySelectorAll('.filter-input');
+            console.log('Search clicked with filters:', {
+                pic: filters[0].value,
+                username: filters[1].value,
+                email: filters[2].value
+            });
+            // Add your search logic here
+        });
+    </script>
 </body>
 </html>
