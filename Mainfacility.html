@@ -27,7 +27,7 @@
             <div class="user-info">
                 <div class="user-avatar-large"></div>
                 <h3>Admin user</h3>
-                <p>Thoosaporn</p>
+                <p>Thosaporn</p>
             </div>
             
             <div class="sidebar-title">Organization Management</div>
@@ -80,14 +80,26 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <div class="content-header">
-                <h1>Facility</h1>
-                <div class="header-actions">
-                    <span class="view-label">View</span>
-                    <svg class="search-icon" viewBox="0 0 24 24" fill="#666">
-                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                    </svg>
+            <!-- Search Filters -->
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label>Facility Name</label>
+                    <input type="text" class="filter-input" placeholder="">
                 </div>
+                <div class="filter-group">
+                    <label>Sport Type</label>
+                    <input type="text" class="filter-input" placeholder="">
+                </div>
+                <div class="filter-group">
+                    <label>Status</label>
+                    <input type="text" class="filter-input" placeholder="">
+                </div>
+                <button class="btn-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                </button>
             </div>
 
             <div class="facility-table">
@@ -113,7 +125,7 @@
                             <td>
                                 <div class="actions">
                                     <button class="btn-edit">✏ Edit</button>
-                                    <button class="btn-delete">DELETE</button>
+                                    <button class="btn-delete">✕ Delete</button>
                                 </div>
                             </td>
                         </tr>
@@ -129,7 +141,7 @@
                             <td>
                                 <div class="actions">
                                     <button class="btn-edit">✏ Edit</button>
-                                    <button class="btn-delete">DELETE</button>
+                                    <button class="btn-delete">✕ Delete</button>
                                 </div>
                             </td>
                         </tr>
@@ -145,7 +157,7 @@
                             <td>
                                 <div class="actions">
                                     <button class="btn-edit">✏ Edit</button>
-                                    <button class="btn-delete">DELETE</button>
+                                    <button class="btn-delete">✕ Delete</button>
                                 </div>
                             </td>
                         </tr>
@@ -161,7 +173,7 @@
                             <td>
                                 <div class="actions">
                                     <button class="btn-edit">✏ Edit</button>
-                                    <button class="btn-delete">DELETE</button>
+                                    <button class="btn-delete">✕ Delete</button>
                                 </div>
                             </td>
                         </tr>
@@ -177,7 +189,7 @@
                             <td>
                                 <div class="actions">
                                     <button class="btn-edit">✏ Edit</button>
-                                    <button class="btn-delete">DELETE</button>
+                                    <button class="btn-delete">✕ Delete</button>
                                 </div>
                             </td>
                         </tr>
@@ -193,7 +205,7 @@
                             <td>
                                 <div class="actions">
                                     <button class="btn-edit">✏ Edit</button>
-                                    <button class="btn-delete">DELETE</button>
+                                    <button class="btn-delete">✕ Delete</button>
                                 </div>
                             </td>
                         </tr>
@@ -209,7 +221,7 @@
                             <td>
                                 <div class="actions">
                                     <button class="btn-edit">✏ Edit</button>
-                                    <button class="btn-delete">DELETE</button>
+                                    <button class="btn-delete">✕ Delete</button>
                                 </div>
                             </td>
                         </tr>
@@ -225,7 +237,7 @@
                             <td>
                                 <div class="actions">
                                     <button class="btn-edit">✏ Edit</button>
-                                    <button class="btn-delete">DELETE</button>
+                                    <button class="btn-delete">✕ Delete</button>
                                 </div>
                             </td>
                         </tr>
@@ -236,5 +248,18 @@
             <button class="btn-add-new">+ Add New</button>
         </main>
     </div>
+
+    <script>
+        // Search functionality
+        document.querySelector('.btn-search').addEventListener('click', function() {
+            const filters = document.querySelectorAll('.filter-input');
+            console.log('Search clicked with filters:', {
+                facilityName: filters[0].value,
+                sportType: filters[1].value,
+                status: filters[2].value
+            });
+            // Add your search logic here
+        });
+    </script>
 </body>
 </html>
