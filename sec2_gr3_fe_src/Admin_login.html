@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Sport Hub</title>
+    <link rel="stylesheet" href="/sec2_gr3_fe_src/css/login-regis-style.css">
+</head>
+<body>
+
+    <div class="split-screen-container">
+        <div class="left-pane"></div>
+
+        <div class="right-pane">
+
+            <div class="form-wrapper">
+                <a href="Choose_login.html" class="back-link">&lt; Back</a>
+                <h1>Admin Login Page:</h1>
+                <form class="login-form" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <a href="Forget_password.html" class="forgot-password">Forget password</a>
+                    <button type="submit" class="submit-btn">Login</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // 1. อ้างอิง Form Login
+        const loginForm = document.querySelector('.login-form');
+
+        // 2. ดักจับเหตุการณ์เมื่อกดปุ่ม Submit (Login)
+        loginForm.addEventListener('submit', async function(event) {
+            event.preventDefault(); // ป้องกันไม่ให้หน้ารีเฟรชเอง
+
+            // ดึงค่าจากช่อง input
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                // 3. ส่งข้อมูลไปที่ API ของเราด้วย fetch
+                const response = await fetch('/api/admin/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                // 4. ตรวจสอบผลลัพธ์ที่ Server ตอบกลับมา
+                if (data.success) {
+                    alert('✅ ยินดีต้อนรับคุณ ' + data.name);
+                    
+                    // บันทึกสถานะการ Login ไว้ในเครื่อง (Optional)
+                    localStorage.setItem('adminId', data.adminId);
+                    localStorage.setItem('adminRole', data.role);
+
+                    // พาไปหน้า Dashboard หรือหน้าจัดการ (เปลี่ยนลิงก์ตามจริง)
+                    // เช่น window.location.href = 'Mainusermanage.html'; 
+                    window.location.href = 'manageuser.html'; // ตัวอย่างส่งกลับหน้าแรกก่อน
+                } else {
+                    alert('❌ ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('เกิดข้อผิดพลาดในการเชื่อมต่อ Server');
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Management</title>
+    <link rel="stylesheet" href="/sec2_gr3_fe_src/css/stylesuser.css">
+   <style>
+        /* ปรับ Grid */
+        .table-header, .user-row {
+            display: grid;
+            /* กำหนดขนาดคอลัมน์เหมือนเดิม */
+            grid-template-columns: 50px 70px 1fr 1.2fr 1fr 0.8fr 180px;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* จัดตัวหนังสือและปุ่มให้ชิดซ้ายปกติก่อน แล้วค่อยขยับ */
+        .th, .td {
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* 🔥 ส่วนจัดการปุ่ม (Actions) */
+        .td.actions {
+            display: flex;
+            justify-content: center; /* จัดกลุ่มปุ่มให้อยู่กึ่งกลางของช่อง */
+            gap: 10px;
+        }
+
+        /* 🔥 ส่วนหัวข้อ (Actions) - จุดที่แก้ */
+        .th:last-child {
+            display: flex;
+            justify-content: center; /* เริ่มจากกึ่งกลาง */
+            padding-right: 110px;     /* 👈 ดันขวาเข้ามา 60px เพื่อให้คำว่า Actions ขยับไปซ้ายไปตรงกับปุ่ม Edit */
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="user-profile">
+            <div class="user-avatar"></div>
+            <span>Admin user</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="user-info">
+                <div class="user-avatar-large"></div>
+                <h3>Admin user</h3>
+            </div>
+
+            <h2 class="sidebar-title">Organization Management</h2>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+                    </svg>
+                    User
+                </a>
+                <a href="Mainfacility.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" fill="currentColor"/>
+                    </svg>
+                    Facility
+                </a>
+                <a href="Mainequipment.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z" fill="currentColor"/>
+                    </svg>
+                    Equipment
+                </a>
+                <a href="Maintournament.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 7h-4V5l-2-2h-4L8 5v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 5h4v2h-4V5zM9 18H6v-2h3v2zm0-4H6v-2h3v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm5 4h-3v-2h3v2zm0-4h-3v-2h3v2z" fill="currentColor"/>
+                    </svg>
+                    Tournament
+                </a>
+                <a href="Mainbooking.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
+                    </svg>
+                    Booking History
+                </a>
+                <a href="Mainequipmentrental.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="3.5" fill="currentColor"/>
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
+                    </svg>
+                    Rental History
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label>Username</label>
+                    <input type="text" id="searchUsername" class="filter-input" placeholder="Username">
+                </div>
+                <div class="filter-group">
+                    <label>E-mail</label>
+                    <input type="text" id="searchEmail" class="filter-input" placeholder="E-mail">
+                </div>
+                <div class="filter-group">
+                    <label>Role</label>
+                    <input type="text" id="searchRole" class="filter-input" placeholder="Role">
+                </div>
+                <button class="btn-search" id="btnSearch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="user-list">
+                <div class="table-header">
+                    <div class="th">No.</div>
+                    <div class="th">Pic</div>
+                    <div class="th">Username</div>
+                    <div class="th">E-mail</div>
+                    <div class="th">BirthDate</div>
+                    <div class="th">Role</div>
+                    <div class="th">Actions</div>
+                </div>
+
+               <div id="user-data-container"></div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-add-user" onclick="window.location.href='AddUser.html'">+ Add User</button>
+                <button class="btn-add-admin" onclick="window.location.href='AddAdmin.html'">+ Add Admin user</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // ฟังก์ชันสำหรับดึงข้อมูลผู้ใช้
+        async function fetchUsers() {
+            const username = document.getElementById('searchUsername').value;
+            const email = document.getElementById('searchEmail').value;
+            const role = document.getElementById('searchRole').value;
+
+            const params = new URLSearchParams({ username, email, role });
+            
+            try {
+                const response = await fetch(`/api/users?${params.toString()}`);
+                const users = await response.json();
+
+                const container = document.getElementById('user-data-container');
+                container.innerHTML = ''; 
+
+                if (users.length === 0) {
+                    // 1 / -1 หมายถึง เริ่มที่เส้นแรก จบที่เส้นสุดท้าย (กินเต็มความกว้าง)
+                    container.innerHTML = `
+                        <div class="user-row" style="justify-content: center">
+                            <div style="grid-column: 1 / -1; text-align: center; ; font-size: 14px;">
+                                ไม่พบข้อมูล
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                users.forEach((user, index) => {
+                    const rowClass = index % 2 === 0 ? 'user-row' : 'user-row alt';
+                    const formattedIndex = (index + 1).toString().padStart(2, '0');
+
+                    // 🔥 แปลงวันที่ (ตัดเวลาทิ้งเอาแค่ YYYY-MM-DD)
+                    let birthDateStr = '-';
+                    if (user.DateOfBirth || user.BirthDate) { // เช็คทั้งสองชื่อเผื่อ DB ส่งมาต่างกัน
+                        const dateObj = new Date(user.DateOfBirth || user.BirthDate);
+                        birthDateStr = dateObj.toISOString().split('T')[0];
+                    }
+
+                    const html = `
+                        <div class="${rowClass}">
+                            <div class="td">${formattedIndex}</div>
+                            <div class="td"><div class="avatar"></div></div>
+                            <div class="td">${user.username}</div>
+                            <div class="td email">${user.Email}</div>
+                            <div class="td">${birthDateStr}</div>
+                            <div class="td">${user.Role}</div>
+                            <div class="td actions">
+                                <button class="btn-edit" onclick="editUser('${user.User_id}')">✏️ Edit</button>
+                                <button class="btn-delete" onclick="deleteUser('${user.User_id}')">✕ Delete</button>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += html;
+                });
+
+            } catch (error) {
+                console.error('Error loading users:', error);
+            }
+        }
+
+        function editUser(id) {
+            window.location.href = `Edituser.html?id=${id}`;
+        }
+
+        async function deleteUser(id) {
+            if (confirm(`คุณแน่ใจหรือไม่ว่าจะลบข้อมูลรหัส ${id} ?\n(การกระทำนี้ไม่สามารถกู้คืนได้)`)) {
+                try {
+                    const response = await fetch(`/api/users/${id}`, {
+                        method: 'DELETE'
+                    });
+                    
+                    const result = await response.json();
+
+                    if (result.success) {
+                        alert('✅ ลบข้อมูลสำเร็จ!');
+                        fetchUsers(); 
+                    } else {
+                        alert('❌ ลบข้อมูลไม่สำเร็จ: ' + result.message);
+                    }
+                } catch (error) {
+                    console.error('Error deleting:', error);
+                    alert('เกิดข้อผิดพลาดในการเชื่อมต่อ Server');
+                }
+            }
+        }
+
+        document.getElementById('btnSearch').addEventListener('click', fetchUsers);
+        window.onload = fetchUsers;
+    </script>
+</body>
+</html>
