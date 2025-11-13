@@ -1,0 +1,85 @@
+/* --- สไตล์สำหรับหน้า Advanced Search --- */
+
+.search-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* กล่องหลักที่ครอบฟอร์มทั้งหมด */
+.search-form {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* เพิ่มเงาเล็กน้อย */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* สร้างระยะห่างระหว่างแต่ละช่องในฟอร์ม */
+}
+
+/* ตัวครอบสำหรับ Label และ Input ที่คู่กัน */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* สไตล์ร่วมสำหรับช่องกรอกข้อความและช่องเลือก (Dropdown) */
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select {
+    background-color: #E6F5E6; /* พื้นหลังสีเขียวอ่อน */
+    border: 1px solid #D1E7D1;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    color: #333;
+    appearance: none; /* ลบสไตล์เริ่มต้นของระบบออก */
+}
+
+/* สไตล์สำหรับข้อความ Placeholder (เช่น YYYY/MM/DD) */
+.form-group input::placeholder {
+    color: #888;
+}
+
+/* เพิ่มลูกศร Dropdown ให้กับกล่อง select */
+.form-group select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.8em;
+}
+
+/* ตัวครอบสำหรับจัดตำแหน่งปุ่ม Search ไปทางขวา */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+/* ปุ่ม Search หลักสีเขียวเข้ม */
+.main-search-btn {
+    background-color: #145A32;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px; /* ทำให้ปุ่มเป็นทรงแคปซูล */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+}
+
+.main-search-btn:hover {
+    background-color: #0B3D1D; /* ทำให้สีเข้มขึ้นเมื่อเมาส์ชี้ */
+}

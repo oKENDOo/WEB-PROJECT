@@ -1,0 +1,181 @@
+/* --- Global Styles --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* --- Split Screen Layout --- */
+.split-screen-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* 1. ส่วนสีเทาด้านซ้าย */
+.left-pane {
+    flex: 1; /* ทำให้ส่วนนี้ขยายเต็มพื้นที่ที่เหลือ */
+    background-color: #EAEAEA; /* สีเทาพื้นหลัง */
+}
+
+/* 2. ส่วนสีขาวด้านขวา */
+.right-pane {
+    flex: 0 0 50%; /* กำหนดให้ส่วนนี้มีความกว้างคงที่ 50% ของหน้าจอ */
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center; /* จัดฟอร์มให้อยู่กลางแนวนอน (ของฝั่งขวา) */
+    align-items: center;   /* จัดฟอร์มให้อยู่กลางแนวตั้ง (ของฝั่งขวา) */
+}
+
+/* กล่องสำหรับจัดระเบียบฟอร์มด้านใน */
+.form-wrapper {
+    width: 100%;
+    max-width: 450px; /* กำหนดความกว้างสูงสุดของตัวฟอร์ม */
+    padding: 3rem;
+}
+
+
+/* --- Form Element Styles (เหมือนเดิม) --- */
+.back-link {
+    display: block;
+    text-decoration: none;
+    color: #555;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.back-link:hover{
+    transform: translateY(-3px);
+}
+
+h1 {
+    font-size: 1.7rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.login-form {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+ .login-form input[type="tel"] ,
+ .login-form input[type="date"]
+{
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    background-color: #EAEAEA;
+    border-radius: 50px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.login-form input[type="email"]{
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    background-color: #EAEAEA;
+    border-radius: 50px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    text-decoration: underline;
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+.info-box {
+    background-color: #ffecec; /* สีพื้นหลังกล่องข้อความ */
+    padding: 1rem 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #555;
+}
+
+.info-box p {
+    margin: 0.5rem;
+}
+
+/* --- Gender Selection Styles --- */
+
+.gender-options {
+    display: flex;
+    gap: 1rem; /* ระยะห่างระหว่างปุ่ม */
+}
+
+.gender-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #EAEAEA;
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+     background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28px 28px; /* กำหนดขนาดไอคอน */
+}
+
+.gender-btn:hover {
+    background-color: #dcdcdc;
+}
+
+/* --- Icon Classes for Gender Buttons --- */
+.male-icon {
+    background-image: url('img/male.png');
+}
+.female-icon {
+    background-image: url('img/female.png');
+}
+.other-icon {
+    background-image: url('img/other.png');
+}
+
+/* สไตล์เมื่อปุ่มถูกเลือก */
+input[type="radio"]:checked + .gender-btn {
+    background-color: #1E8449;
+}

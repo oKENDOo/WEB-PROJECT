@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Rental History</title>
+    <link rel="stylesheet" href="/sec2_gr3_fe_src/css/styleequipmentrental.css">
+</head>
+
+<body>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="user-profile-top">
+            <span>Admin user</span>
+            <div class="user-avatar"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-info">
+                <div class="user-avatar-large"></div>
+                <h3>Admin user</h3>
+            </div>
+
+            <div class="sidebar-title">Organization Management</div>
+
+            <nav class="sidebar-nav">
+                <a href="manageuser.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                    User
+                </a>
+                <a href="Mainfacility.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                    </svg>
+                    Facility
+                </a>
+                <a href="Mainequipment.html" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z" />
+                    </svg>
+                    Equipment
+                </a>
+                <a href="Maintournament.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M20 7h-4V5l-2-2h-4L8 5v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 5h4v2h-4V5zM9 18H6v-2h3v2zm0-4H6v-2h3v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm5 4h-3v-2h3v2zm0-4h-3v-2h3v2z"
+                            fill="currentColor" />
+                    </svg>
+                    Tournament
+                </a>
+                <a href="Mainbooking.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"
+                            fill="currentColor" />
+                    </svg>
+                    Booking History
+                </a>
+                <a href="Mainequipmentrental.html" class="nav-item active">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="3.5" fill="currentColor" />
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                            fill="currentColor" />
+                    </svg>
+                    Rental History
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Search Filters -->
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label>User Name</label>
+                    <input type="text" class="filter-input" placeholder="">
+                </div>
+                <div class="filter-group">
+                    <label>Equipment Name</label>
+                    <input type="text" class="filter-input" placeholder="">
+                </div>
+                <div class="filter-group">
+                    <label>Status</label>
+                    <input type="text" class="filter-input" placeholder="">
+                </div>
+                <button class="btn-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Table -->
+            <div class="facility-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Username</th>
+                            <th>Equipment Name</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>Test-100 User</td>
+                            <td>Football Ball</td>
+                            <td>
+                                <span class="status available">
+                                    <span class="status-dot"></span>
+                                    Completed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn-edit">✏️ Edit</button>
+                                    <button class="btn-edit">👁️ Payments</button>
+                                    <button class="btn-delete">🗑️ Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>Test-101 User</td>
+                            <td>Football Ball</td>
+                            <td>
+                                <span class="status ccancelled">
+                                    <span class="status-dot"></span>
+                                    Cancelled
+                                </span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn-edit">✏️ Edit</button>
+                                    <button class="btn-edit">👁️ Payments</button>
+                                    <button class="btn-delete">🗑️ Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Test-102 User</td>
+                            <td>Football Ball</td>
+                            <td>
+                                <span class="status in-use">
+                                    <span class="status-dot"></span>
+                                    In Use
+                                </span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn-edit">✏️ Edit</button>
+                                    <button class="btn-edit">👁️ Payments</button>
+                                    <button class="btn-delete">🗑️ Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>Test-103 User</td>
+                            <td>Badminton Racket</td>
+                            <td>
+                                <span class="status in-use">
+                                    <span class="status-dot"></span>
+                                    In Use
+                                </span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn-edit">✏️ Edit</button>
+                                    <button class="btn-edit">👁️ Payments</button>
+                                    <button class="btn-delete">🗑️ Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>Test-104 User</td>
+                            <td>Badminton Racket</td>
+                            <td>
+                                <span class="status in-use">
+                                    <span class="status-dot"></span>
+                                    In Use
+                                </span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn-edit">✏️ Edit</button>
+                                    <button class="btn-edit">👁️ Payments</button>
+                                    <button class="btn-delete">🗑️ Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>Test-105 User</td>
+                            <td>Badminton Racket</td>
+                            <td>
+                                <span class="status available">
+                                    <span class="status-dot"></span>
+                                    Comfirmed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn-edit">✏️ Edit</button>
+                                    <button class="btn-edit">👁️ Payments</button>
+                                    <button class="btn-delete">🗑️ Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>Test-106 User</td>
+                            <td>Table Tennis Ball</td>
+                            <td>
+                                <span class="status available">
+                                    <span class="status-dot"></span>
+                                    Comfirmed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn-edit">✏️ Edit</button>
+                                    <button class="btn-edit">👁️ Payments</button>
+                                    <button class="btn-delete">🗑️ Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>Test-107 User</td>
+                            <td>Table Tennis Ball</td>
+                            <td>
+                                <span class="status available">
+                                    <span class="status-dot"></span>
+                                    Comfirmed
+                                </span>
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <button class="btn-edit">✏️ Edit</button>
+                                    <button class="btn-edit">👁️ Payments</button>
+                                    <button class="btn-delete">🗑️ Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button class="btn-add-new">+ Add New</button>
+        </main>
+    </div>
+    <script>
+        // Search functionality
+        document.querySelector('.btn-search').addEventListener('click', function () {
+            const UserName = document.querySelectorAll('.filter-input')[0].value.toLowerCase();
+            const EquipmentName = document.querySelectorAll('.filter-input')[1].value.toLowerCase();
+            const Status = document.querySelectorAll('.filter-input')[2].value.toLowerCase();
+
+            const rows = document.querySelectorAll('tbody tr');
+
+            rows.forEach(row => {
+                const userName = row.cells[1].textContent.toLowerCase();
+                const equipmentName = row.cells[2].textContent.toLowerCase();
+                const rowStatus = row.cells[3].textContent.toLowerCase();
+
+                const matchUserName = !UserName || userName.includes(UserName);
+                const matchEquipmentName = !EquipmentName || equipmentName.includes(EquipmentName);
+                const matchStatus = !Status || rowStatus.includes(Status);
+
+                row.style.display = (matchUserName && matchEquipmentName && matchStatus) ? '' : 'none';
+            });
+        });
+
+        // Enter key support
+        document.querySelectorAll('.filter-input').forEach(input => {
+            input.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    document.querySelector('.btn-search').click();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
